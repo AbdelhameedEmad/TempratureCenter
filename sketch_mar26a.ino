@@ -56,7 +56,6 @@ timeOfReading += timeInSeconds;
  
  float temperatureC = -((voltage - 0.5) * 100) ;  //converting from 10 mv per degree wit 500 mV offset
                                                //to degrees ((voltage - 500mV) times 100)
- 
  tempInCelsius.push_back(temperatureC);
  timeOfTemp.push_back(timeOfReading);
                                     
