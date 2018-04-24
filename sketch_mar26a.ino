@@ -94,7 +94,7 @@ timeOfReading += timeInSeconds;
       char inCha = (char)Serial.read(); //read the input
       inputStrin += inCha;        //make a string of the characters coming on serial
     }
-    if(inputStrin.equals("ack")) {              //if the is an acknowledgement 
+    if(inputStrin.equals("ack")) {              //if the request is an acknowledgement 
         while(tempInCelsius.size() > 0){        //Erase the old data
         timeOfTemp.pop_back();
         tempInCelsius.pop_back();
