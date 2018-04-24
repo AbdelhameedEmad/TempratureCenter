@@ -87,6 +87,7 @@ timeOfReading += timeInSeconds;
     }
     if(inputString.equals("send")){             //If sending the data is requested
    printVectors(tempInCelsius.size());          //Send the data
+   Serial.println("");
         while(true){
        delay(10000);
   if(Serial.available()){                       //if there is a request 
@@ -103,9 +104,10 @@ timeOfReading += timeInSeconds;
         }break;
         }
     }
-    else
+    else{
        printVectors(tempInCelsius.size());      //if there is no requests retransmit
-        }     
+       Serial.println("");
+    }}     
     } inputString = "";
   }
   
