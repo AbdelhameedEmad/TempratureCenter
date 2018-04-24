@@ -31,7 +31,9 @@ void printVectors(int j){
         Serial.print(temprature);
         Serial.print(",");
         Serial.print(" ");
-        Serial.println(timing);
+        delay(100);
+        Serial.println(timing);     
+        delay(100);
       }
 }
 
@@ -86,7 +88,7 @@ timeOfReading += timeInSeconds;
     if(inputString.equals("send")){             //If sending the data is requested
    printVectors(tempInCelsius.size());          //Send the data
         while(true){
-       delay(7000);
+       delay(10000);
   if(Serial.available()){                       //if there is a request 
     String inputStrin = "";
   while(Serial.available())                    
@@ -94,7 +96,7 @@ timeOfReading += timeInSeconds;
       char inCha = (char)Serial.read(); //read the input
       inputStrin += inCha;        //make a string of the characters coming on serial
     }
-    if(inputStrin.equals("ack")) {              //if the request is an acknowledgement 
+    if(inputStrin.equals("ack")) {              //if the is an acknowledgement 
         while(tempInCelsius.size() > 0){        //Erase the old data
         timeOfTemp.pop_back();
         tempInCelsius.pop_back();
